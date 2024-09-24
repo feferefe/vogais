@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de vogais</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body{
+            background-color: rgb(219, 198, 239);
+        }
+
+        article{
+            background-color: transparent;
+            width: 400px;
+            height: 450px;
+            border-radius: 15px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.336);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .title{
+            text-align: center;
+            padding-top: 20px;
+        }
+        .palavra{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: ;
+        }
+        .txt{
+           display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        #txt2{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0px;
+            font-size: 15px;
+            color: rgb(163, 4, 4);
+        }
+
+        #resposta{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        
+        }
+
+        .btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+       
+    </style>
+</head>
+<body>
+   
+    <article>
+    <div class="title">
+        <h2 class="title">Contador de Vogais</h2>
+    </div>
+
+    <div class="txt">
+        <p>Adicione a palavra aqui:</p>   
+    </div>
+    <div class="txt2">
+        <p id="txt2">Favor desconsiderar as acentuações!</p>
+    </div>
+    <div class="palavra">
+        <input type="text" placeholder="palavra" id="palavra">
+    </div>
+
+    <div class="btn">
+        <input type="button" value="verificar" class="btn" onclick="contador()" >
+    </div>
+
+    <div id="resposta">
+        <p>
+            
+        </p>
+
+    </div>
+
+</article>
+
+<script>
+
+    function contador(){
+        const texto = document.getElementById("palavra").value.toLowerCase();
+        const vogais = [];
+        vogais.push("a", "e", "i", "o", "u")
+        let contador = 0;
+    for(let i = 0; i < texto.length; i++){
+        if(vogais.includes(texto[i])){
+            contador++;
+        }
+    }
+
+    document.getElementById('resposta').innerHTML = 'A sua palavra tem ' + contador + ' vogais.';
+}
+
+
+
+</script>
+
+</body>
+</html>
